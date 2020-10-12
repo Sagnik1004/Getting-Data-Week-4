@@ -41,7 +41,7 @@ total<- cbind(y, subtotal, x) #this is the final combined dataset at the end of 
 
 new_total <- total %>% group_by(activity,Subjects) %>% summarise_each(funs = mean) #new_total is the new dataset we create in step 5
 
-#final step: writing out/exporting the resulting dataset and
+#final step: writing out/exporting the resulting dataset 
 write.table(new_total, file = 'F:/R ASSIGNMENTS/datasciencecoursera/Learning/Getting Data/Week 4/UCI HAR Dataset/GettingDataAssignment.txt')
 
 
