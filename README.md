@@ -15,3 +15,9 @@ We first read the test and training datasets for x data, y data and subjects dat
 4. Appropriately labels the data set with descriptive variable names.
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
+
+Inorder to do this, we  combined the training and test datasets and only kept the coulumns/measurements on the mean and standard deviation
+
+After this, we created a new dataset from the previous combined dataset with the selected columns such that it contains the average values for each activity and each subject.
+
+Finally we exported that resuling dataset and uploaded to this github repository 
