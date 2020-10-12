@@ -1,19 +1,19 @@
 #getting data assignment
 library(dplyr)
 #reading test data
-test_x<- read.table('F:/R ASSIGNMENTS/datasciencecoursera/Learning/Getting Data/Week 4/UCI HAR Dataset/test/X_test.txt')
-test_y<- read.table('F:/R ASSIGNMENTS/datasciencecoursera/Learning/Getting Data/Week 4/UCI HAR Dataset/test/y_test.txt')
-test_sub<- read.table('F:/R ASSIGNMENTS/datasciencecoursera/Learning/Getting Data/Week 4/UCI HAR Dataset/test/subject_test.txt')
+test_x<- read.table('./X_test.txt')
+test_y<- read.table('./y_test.txt')
+test_sub<- read.table('./subject_test.txt')
 
 #reading training data
-train_x<- read.table('F:/R ASSIGNMENTS/datasciencecoursera/Learning/Getting Data/Week 4/UCI HAR Dataset/train/X_train.txt')
-train_y<- read.table('F:/R ASSIGNMENTS/datasciencecoursera/Learning/Getting Data/Week 4/UCI HAR Dataset/train/y_train.txt')
-train_sub<- read.table('F:/R ASSIGNMENTS/datasciencecoursera/Learning/Getting Data/Week 4/UCI HAR Dataset/train/subject_train.txt')
+train_x<- read.table('./X_train.txt')
+train_y<- read.table('./y_train.txt')
+train_sub<- read.table('./subject_train.txt')
 
 #reading the features and activity_labels data. 
 #features will our variables/columns in test_x 
-features<- read.table('F:/R ASSIGNMENTS/datasciencecoursera/Learning/Getting Data/Week 4/UCI HAR Dataset/features.txt')
-activity_labels<- read.table('F:/R ASSIGNMENTS/datasciencecoursera/Learning/Getting Data/Week 4/UCI HAR Dataset/activity_labels.txt')
+features<- read.table('./features.txt')
+activity_labels<- read.table('./activity_labels.txt')
 
 #Step 1: merging test and training datasets
 x<- rbind(test_x, train_x ) #we first combine the test and training x data
@@ -41,7 +41,7 @@ total<- cbind(y, subtotal, x) #this is the final combined dataset at the end of 
 
 new_total <- total %>% group_by(activity,Subjects) %>% summarise_each(funs = mean) #new_total is the new dataset we create in step 5
 
-#final step: writing out/exporting the resulting dataset and
+#final step: writing out/exporting the resulting dataset 
 write.table(new_total, file = 'F:/R ASSIGNMENTS/datasciencecoursera/Learning/Getting Data/Week 4/UCI HAR Dataset/GettingDataAssignment.txt')
 
 
