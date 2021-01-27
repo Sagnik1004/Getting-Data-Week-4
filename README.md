@@ -1,4 +1,4 @@
-# Getting-Data-Week-4
+# Getting-Data-Week-4 (original url from coursera: https://www.coursera.org/learn/data-cleaning/peer/FIZtT/getting-and-cleaning-data-course-project)
 Assignment for getting data week 4
 Info about the data:
 x data are the sensor readings from smartphones worn by 30 subjects.
